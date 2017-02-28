@@ -5,7 +5,11 @@ import android.os.Handler;
 
 import com.example.utsoft.sichendemo.base.BaseActivity;
 import com.example.utsoft.sichendemo.R;
-
+/**
+ * Created by 陈思 on 2017/2/28 14:35.
+ * Function:
+ * Desc:
+ */
 public class TestLeakCanaryActivity extends BaseActivity {
 
     private final Handler mhandler = new Handler();
