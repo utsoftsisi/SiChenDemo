@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_okhttp_mainActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="okhttpJson"
+        android:paddingTop="5dp" />
+
+    <Button
+        android:id="@+id/btn_okhttp_mainActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/tv_okhttp_mainActivity"
+        android:text="获取okhttpJson数据" />
+
+    <TextView
+        android:id="@+id/tv_retrofit_mainActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_okhttp_mainActivity"
+        android:layout_margin="10dp"
+        android:hint="retrofitJson" />
+
+    <Button
+        android:id="@+id/btn_retrofit_mainActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_okhttp_mainActivity"
+        android:layout_toRightOf="@id/tv_retrofit_mainActivity"
+        android:text="获取retrofitJson数据" />
+
+    <LinearLayout
+        android:id="@+id/llayout_btn_mainActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_retrofit_mainActivity"
+        android:layout_margin="10dp">
+
+        <Button
+            android:id="@+id/btn_flyco_mainActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="到Flyco" />
+
+        <Button
+            android:id="@+id/btn_Refresh_mainActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Refresh" />
+
+        <Button
+            android:id="@+id/btn_rxjava_mainActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="到Rxjava" />
+
+        <Button
+            android:id="@+id/btn_evenbus_mainActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EvenBus" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_show_mainActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llayout_btn_mainActivity" />
+</RelativeLayout>
