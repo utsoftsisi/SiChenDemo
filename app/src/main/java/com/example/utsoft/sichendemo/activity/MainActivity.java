@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnEvenbusMainActivity;
 
     private String URL = "http://ip.taobao.com/service/getIpInfo.php?ip=63.223.108.42";
-    private String URL1 = "http://ip.taobao.com";
+    private String URL1 = "http://ip.taobao.com/";
 
 
     @Override
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
                         .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                         .build();
                 WebInterface api = retrofit.create(WebInterface.class);
-                retrofit2.Call<Data> call = api.requestData("63.223.108.42");
+                retrofit2.Call<Data> call = api.requestData5("getIpInfo.php", "63.223.108.42");
                 call.enqueue(new retrofit2.Callback<Data>() {
                     @Override
                     public void onResponse(retrofit2.Call<Data> call, final retrofit2.Response<Data> response) {
