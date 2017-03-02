@@ -37,6 +37,7 @@ public class TestRxJavaActivity extends AppCompatActivity {
         for (int i=0;i<5;i++) {
             courseList.add(new Course("math"+i));
         }
+
         List<Student> studentList = new ArrayList<>();
         for (int i=0;i<5;i++) {
             studentList.add(new Student("sisi"+i, courseList));
