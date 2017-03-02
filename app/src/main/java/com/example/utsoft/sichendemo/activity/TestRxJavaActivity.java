@@ -5,7 +5,12 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.utsoft.sichendemo.R;
+import com.example.utsoft.sichendemo.entity.Course;
+import com.example.utsoft.sichendemo.entity.Student;
 import com.orhanobut.logger.Logger;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import rx.Observable;
 import rx.Subscriber;
@@ -23,6 +28,33 @@ public class TestRxJavaActivity extends AppCompatActivity {
 
         lazyObservable();
 
+        testStudent();
+
+    }
+
+    private void testStudent() {
+        List<Course> courseList = new ArrayList<>();
+        for (int i=0;i<5;i++) {
+            courseList.add(new Course("math"+i));
+        }
+        List<Student> studentList = new ArrayList<>();
+        for (int i=0;i<5;i++) {
+            studentList.add(new Student("sisi"+i, courseList));
+        }
+
+        Observable.from(studentList)
+                .flatMap(new Func1<Student, Observable<Course>>() {
+                    @Override
+                    public Observable<Course> call(Student student) {
+                        return Observable.from(student.getCourseList());
+                    }
+                })
+                .subscribe(new Action1<Course>() {
+                    @Override
+                    public void call(Course course) {
+                        Logger.i(course.getCourseName());
+                    }
+                });
     }
 
     private void lazyObservable() {
