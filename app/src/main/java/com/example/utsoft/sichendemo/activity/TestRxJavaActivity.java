@@ -1,7 +1,7 @@
 package com.example.utsoft.sichendemo.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.example.utsoft.sichendemo.R;
@@ -11,13 +11,17 @@ import com.orhanobut.logger.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
 import rx.Subscriber;
+import rx.Subscription;
 import rx.functions.Action1;
 import rx.functions.Func1;
 
 public class TestRxJavaActivity extends AppCompatActivity {
+
+    private Subscription subscription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,41 @@ public class TestRxJavaActivity extends AppCompatActivity {
 
         testStudent();
 
+        testTimer();
+
+        testConcat();
+
+    }
+
+    private void testConcat() {
+        Observable<Integer> observable1 = Observable.just(1,2,3);
+        Observable<Integer> observable2 = Observable.just(4,5,6);
+        Observable.merge(observable1, observable2)
+                .subscribe(new Action1<Integer>() {
+                    @Override
+                    public void call(Integer integer) {
+                        Logger.i(integer.toString());
+                    }
+                });
+
+        Observable.just(33,44,55,6)
+                .elementAtOrDefault(3,66)
+                .subscribe(new Action1<Integer>() {
+                    @Override
+                    public void call(Integer integer) {
+                        Logger.i(integer.toString());
+                    }
+                });
+    }
+
+    private void testTimer() {
+        subscription = Observable.interval(1, TimeUnit.SECONDS)
+                .subscribe(new Action1<Long>() {
+                    @Override
+                    public void call(Long aLong) {
+                        Logger.i(aLong.toString());
+                    }
+                });
     }
 
     private void testStudent() {
@@ -97,5 +136,12 @@ public class TestRxJavaActivity extends AppCompatActivity {
             }
         };
         observable.subscribe(subscriber);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (subscription != null)
+            subscription.unsubscribe();
     }
 }
