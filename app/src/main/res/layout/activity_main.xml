@@ -19,6 +19,13 @@
         android:layout_toRightOf="@id/tv_okhttp_mainActivity"
         android:text="获取okhttpJson数据" />
 
+    <Button
+        android:id="@+id/btn_greenDao_mainActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/btn_okhttp_mainActivity"
+        android:text="到GreenDao" />
+
     <TextView
         android:id="@+id/tv_retrofit_mainActivity"
         android:layout_width="wrap_content"
