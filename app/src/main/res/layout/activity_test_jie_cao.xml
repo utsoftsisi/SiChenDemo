@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.utsoft.sichendemo.activity.TestJieCaoActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="18dp"
+                android:text="Base simple ui example" />
+
+            <fm.jiecao.jcvideoplayer_lib.JCVideoPlayerSimple
+                android:id="@+id/custom_videoplayer"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="18dp"
+                android:text="Recommended standard ui example" />
+
+            <fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard
+                android:id="@+id/custom_videoplayer_standard"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="18dp"
+                android:text="Standard ui with share button, visible after fullscreen" />
+
+            <Button
+                android:id="@+id/allSreeen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btnClick"
+                android:text="全屏播放" />
+
+            <Button
+                android:id="@+id/btn_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btnClick"
+                android:text="视频播放列表" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

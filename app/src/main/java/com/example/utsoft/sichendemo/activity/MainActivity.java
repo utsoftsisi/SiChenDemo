@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnEvenbusMainActivity;
     @BindView(R.id.btn_greenDao_mainActivity)
     Button btnGreenDaoMainActivity;
+    @BindView(R.id.btn_jiecao_mainActivity)
+    Button btnJiecaoMainActivity;
 
     private String URL = "http://ip.taobao.com/service/getIpInfo.php?ip=63.223.108.42";
     private String URL1 = "http://ip.taobao.com/";
@@ -169,6 +171,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 TestGreenDaoActivity.launchActivity(MainActivity.this);
+            }
+        });
+
+        btnJiecaoMainActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TestJieCaoActivity.launchActivity(MainActivity.this);
             }
         });
     }

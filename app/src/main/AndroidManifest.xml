@@ -27,7 +27,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.TestGreenDaoActivity"></activity>
+        <activity android:name=".activity.TestGreenDaoActivity" />
+        <activity android:name=".activity.TestJieCaoActivity" />
+        <activity android:name=".activity.ListJieCaoActivity"></activity>
     </application>
 
 </manifest>

@@ -42,6 +42,14 @@
         android:layout_toRightOf="@id/tv_retrofit_mainActivity"
         android:text="获取retrofitJson数据" />
 
+    <Button
+        android:id="@+id/btn_jiecao_mainActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_okhttp_mainActivity"
+        android:layout_toRightOf="@id/btn_retrofit_mainActivity"
+        android:text="到jiecao" />
+
     <LinearLayout
         android:id="@+id/llayout_btn_mainActivity"
         android:layout_width="match_parent"
