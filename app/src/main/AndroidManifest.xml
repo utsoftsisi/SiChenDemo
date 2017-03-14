@@ -29,7 +29,9 @@
         </activity>
         <activity android:name=".activity.TestGreenDaoActivity" />
         <activity android:name=".activity.TestJieCaoActivity" />
-        <activity android:name=".activity.ListJieCaoActivity"></activity>
+        <activity android:name=".activity.ListJieCaoActivity" />
+        <activity android:name=".activity.TestRxJava2Activity" />
+        <activity android:name=".activity.RetrofitAndRxJavaActivity"></activity>
     </application>
 
 </manifest>
