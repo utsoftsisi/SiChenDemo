@@ -2,6 +2,7 @@ package com.example.utsoft.sichendemo.interfaces;
 
 import com.example.utsoft.sichendemo.entity.Data;
 
+import io.reactivex.Observable;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -29,5 +30,9 @@ public interface WebInterface {
     //5.动态替换路径和参数 ,?可加上
     @GET("service/{path}")
     Call<Data> requestData5(@Path("path") String path, @Query("ip") String ip);
+
+    //Retrofit和RxJava结合起来
+    @GET("service/{path}")
+    Observable<Data> requestData6(@Path("path") String path, @Query("ip") String ip);
 
 }

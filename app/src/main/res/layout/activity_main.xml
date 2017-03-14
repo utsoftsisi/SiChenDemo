@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -8,54 +10,100 @@
         android:id="@+id/tv_okhttp_mainActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:hint="okhttpJson"
-        android:paddingTop="5dp" />
+        android:paddingTop="5dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBaseline_toBaselineOf="parent"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="10dp" />
 
     <Button
         android:id="@+id/btn_okhttp_mainActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/tv_okhttp_mainActivity"
-        android:text="获取okhttpJson数据" />
+        android:text="获取okhttpJson数据"
+        android:layout_marginStart="7dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_greenDao_mainActivity"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toRightOf="@+id/tv_retrofit_mainActivity"
+        android:layout_marginLeft="7dp" />
 
     <Button
         android:id="@+id/btn_greenDao_mainActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/btn_okhttp_mainActivity"
-        android:text="到GreenDao" />
+        android:text="到GreenDao"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/btn_okhttp_mainActivity" />
 
     <TextView
         android:id="@+id/tv_retrofit_mainActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_okhttp_mainActivity"
-        android:layout_margin="10dp"
-        android:hint="retrofitJson" />
+        android:hint="retrofitJson"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_okhttp_mainActivity"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="10dp" />
 
     <Button
         android:id="@+id/btn_retrofit_mainActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_okhttp_mainActivity"
-        android:layout_toRightOf="@id/tv_retrofit_mainActivity"
-        android:text="获取retrofitJson数据" />
+        android:text="获取retrofitJson数据"
+        app:layout_constraintRight_toLeftOf="@+id/btn_jiecao_mainActivity"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_jiecao_mainActivity"
+        android:layout_marginBottom="7dp" />
 
     <Button
         android:id="@+id/btn_jiecao_mainActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btn_okhttp_mainActivity"
-        android:layout_toRightOf="@id/btn_retrofit_mainActivity"
-        android:text="到jiecao" />
+        android:text="到jiecao"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintRight_toRightOf="@+id/btn_greenDao_mainActivity"
+        app:layout_constraintTop_toBottomOf="@+id/btn_greenDao_mainActivity"
+        android:layout_marginRight="10dp" />
+
+    <ImageView
+        android:id="@+id/iv_show_mainActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/llayout_btn_mainActivity"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <LinearLayout
         android:id="@+id/llayout_btn_mainActivity"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btn_retrofit_mainActivity"
-        android:layout_margin="10dp">
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_jiecao_mainActivity"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1">
 
         <Button
             android:id="@+id/btn_flyco_mainActivity"
@@ -82,9 +130,16 @@
             android:text="EvenBus" />
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/iv_show_mainActivity"
+    <Button
+        android:id="@+id/btn_retrofitRxjava_mainActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/llayout_btn_mainActivity" />
-</RelativeLayout>
+        android:text="到retrofit和Rxjava"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/llayout_btn_mainActivity"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="10dp" />
+</android.support.constraint.ConstraintLayout>
