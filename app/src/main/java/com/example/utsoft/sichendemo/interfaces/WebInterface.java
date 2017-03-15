@@ -11,6 +11,14 @@ import retrofit2.http.Url;
 
 /**
  * Created by chensi on 2017/2/24.
+ *
+ •WebInterface其实是对Rest API的一个映射关系，在实际开发中，我们可以定义：public interface ClientService，里面包含post ,get 方法。
+ •接口中的方法使用了Retrofit的注解，Retrofit这个库给了我们很多注解。
+ •requestData()这个方法表示：一个get请求获取给定URL的Data(或者List<Data>，此处是Data)。
+ •requestData()传入的参数为我们需要get的url的动态部分。
+ •这里的Data为我们自己定义的java bean的类：Data.class用于封装获取的Jason数据。
+ 注意：此处Retrofit又帮我们省掉了很多工作，只需要我们自己定义业务对应的实体类，而Jason数据的转换和封装则帮我们封装好了,只需我们调用。
+
  */
 
 public interface WebInterface {
