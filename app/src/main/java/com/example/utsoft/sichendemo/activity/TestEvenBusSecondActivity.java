@@ -53,6 +53,6 @@ public class TestEvenBusSecondActivity extends AppCompatActivity {
 
     @Subscribe
     public void onEvent (MessageEvent event) {
-        btnJumpToFirst.setText("sticky event");
+        btnJumpToFirst.setText("自己发的：wo shi sisi");
     }
 }
