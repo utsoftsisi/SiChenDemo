@@ -142,4 +142,17 @@
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="10dp" />
+
+    <Button
+        android:id="@+id/btn_RxBus_mainActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="到RxBus"
+        tools:layout_constraintBottom_creator="1"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="185dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp" />
 </android.support.constraint.ConstraintLayout>
