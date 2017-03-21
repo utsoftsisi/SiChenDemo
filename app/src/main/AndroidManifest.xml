@@ -33,7 +33,8 @@
         <activity android:name=".activity.TestRxJava2Activity" />
         <activity android:name=".activity.RetrofitAndRxJavaActivity" />
         <activity android:name=".activity.TestRxBusFirstActivity" />
-        <activity android:name=".activity.TestRxBusSecondActivity"></activity>
+        <activity android:name=".activity.TestRxBusSecondActivity" />
+        <activity android:name=".login.view.UserInfoActivity" />
     </application>
 
 </manifest>
