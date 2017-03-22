@@ -12,5 +12,5 @@ import java.util.List;
 
 public interface IUserInfoPresenter {
     void save(String name, String city);
-    List<UserBean> get();
+    void get();
 }

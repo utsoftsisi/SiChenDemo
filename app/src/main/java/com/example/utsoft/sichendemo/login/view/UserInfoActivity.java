@@ -11,11 +11,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.utsoft.sichendemo.R;
-import com.example.utsoft.sichendemo.login.model.UserBean;
 import com.example.utsoft.sichendemo.login.presenter.IUserInfoPresenter;
 import com.example.utsoft.sichendemo.login.presenter.UserInfoPresenterImp;
-
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -54,10 +51,8 @@ public class UserInfoActivity extends AppCompatActivity implements IUserInfoView
         btnSaveUserInfoActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = etNameUserInfoActivity.getText().toString().trim();
-                String city = etCityUserInfoActivity.getText().toString().trim();
-                if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(city)) {
-                    iUserInfoPresenter.save(name, city);
+                if (!TextUtils.isEmpty(getName()) && !TextUtils.isEmpty(getCity())) {
+                    iUserInfoPresenter.save(getName(), getCity());
                     etNameUserInfoActivity.setText("");
                     etCityUserInfoActivity.setText("");
                 }
@@ -67,22 +62,33 @@ public class UserInfoActivity extends AppCompatActivity implements IUserInfoView
         btnGetUserInfoActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                List<UserBean> userBeanList = iUserInfoPresenter.get();
-                StringBuffer allName = new StringBuffer();
-                StringBuffer allCity = new StringBuffer();
-                for (UserBean userBean : userBeanList) {
-                    allName.append(userBean.getName().toString());
-                    allCity.append(userBean.getCity().toString());
-                }
-                etGetNameUserInfoActivity.setText(allName);
-                etGetCityUserInfoActivity.setText(allCity);
-
-            }
+                iUserInfoPresenter.get();
+             }
         });
     }
 
     @Override
     public void saveResult() {
         Toast.makeText(this, "保存成功", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public String getName() {
+        return etNameUserInfoActivity.getText().toString().trim();
+    }
+
+    @Override
+    public String getCity() {
+        return etCityUserInfoActivity.getText().toString().trim();
+    }
+
+    @Override
+    public void setName(String name) {
+        etGetNameUserInfoActivity.setText(name);
+    }
+
+    @Override
+    public void setCity(String city) {
+        etGetCityUserInfoActivity.setText(city);
     }
 }

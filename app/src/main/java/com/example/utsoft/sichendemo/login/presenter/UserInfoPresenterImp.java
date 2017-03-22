@@ -10,9 +10,13 @@ import java.util.List;
 
 /**
  * Created by 陈思 on 2017/3/22 11:08.
- * Function:
- * Desc:Model层与View层之间的交互由Presenter完成，
- * Presenter与View之间的交互也是通过接口完成的，如 iUserInfoView.saveResult();。
+ * Function:Model层与View层之间的交互由Presenter完成。
+ * Desc:Presenter与View之间的交互也是通过接口完成的，
+ * view可以把所有的ui逻辑交给presenter处理，view只负责显示。
+ * 如：
+ * iUserInfoView.saveResult(),
+ * iUserInfoView.setName(allName.toString())，
+ * iUserInfoView.setCity(allCity.toString())。
  */
 
 public class UserInfoPresenterImp implements IUserInfoPresenter {
@@ -41,7 +45,16 @@ public class UserInfoPresenterImp implements IUserInfoPresenter {
     }
 
     @Override
-    public List<UserBean> get() {
-        return iUser.getUserBeanList();
+    public void get() {
+        List<UserBean> userBeanList = iUser.getUserBeanList();
+        StringBuffer allName = new StringBuffer();
+        StringBuffer allCity = new StringBuffer();
+        for (UserBean userBean : userBeanList) {
+            allName.append(userBean.getName().toString());
+            allCity.append(userBean.getCity().toString());
+        }
+        //通过调用IUserInfoView的方法来更新ui显示
+        iUserInfoView.setName(allName.toString());
+        iUserInfoView.setCity(allCity.toString());
     }
 }
