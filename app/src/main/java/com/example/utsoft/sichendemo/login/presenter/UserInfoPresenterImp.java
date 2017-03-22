@@ -9,7 +9,10 @@ import com.example.utsoft.sichendemo.login.view.IUserInfoView;
 import java.util.List;
 
 /**
- * Created by chensi on 2017/3/20.
+ * Created by 陈思 on 2017/3/22 11:08.
+ * Function:
+ * Desc:Model层与View层之间的交互由Presenter完成，
+ * Presenter与View之间的交互也是通过接口完成的，如 iUserInfoView.saveResult();。
  */
 
 public class UserInfoPresenterImp implements IUserInfoPresenter {
