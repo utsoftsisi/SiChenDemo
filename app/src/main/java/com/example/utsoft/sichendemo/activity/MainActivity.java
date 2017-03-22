@@ -13,6 +13,7 @@ import com.example.utsoft.sichendemo.R;
 import com.example.utsoft.sichendemo.entity.Data;
 import com.example.utsoft.sichendemo.interfaces.WebInterface;
 import com.example.utsoft.sichendemo.login.view.UserInfoActivity;
+import com.example.utsoft.sichendemo.netconnect.view.NetConnectActivity;
 import com.google.gson.Gson;
 import com.orhanobut.logger.Logger;
 
@@ -59,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnRxBusMainActivity;
     @BindView(R.id.btn_mvp_save_mainActivity)
     Button btnMvpSaveMainActivity;
+    @BindView(R.id.btn_mvp_net_mainActivity)
+    Button btnMvpNetMainActivity;
 
     private String URL = "http://ip.taobao.com/service/getIpInfo.php?ip=63.223.108.42";
     private String URL1 = "http://ip.taobao.com/";
@@ -206,6 +209,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 UserInfoActivity.launchActivity(MainActivity.this);
+            }
+        });
+
+        btnMvpNetMainActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NetConnectActivity.launchActivity(MainActivity.this);
             }
         });
     }

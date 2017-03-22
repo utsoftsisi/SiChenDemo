@@ -152,7 +152,7 @@
         android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="185dp"
+        android:layout_marginBottom="249dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="16dp" />
 
@@ -167,4 +167,15 @@
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toRightOf="@+id/btn_RxBus_mainActivity"
         android:layout_marginLeft="20dp" />
+
+    <Button
+        android:id="@+id/btn_mvp_net_mainActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="到MVP网络连接"
+        app:layout_constraintLeft_toRightOf="@+id/btn_mvp_save_mainActivity"
+        app:layout_constraintTop_toBottomOf="@+id/llayout_btn_mainActivity"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
 </android.support.constraint.ConstraintLayout>
