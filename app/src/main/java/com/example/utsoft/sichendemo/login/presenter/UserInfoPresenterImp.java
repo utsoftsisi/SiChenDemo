@@ -1,5 +1,6 @@
 package com.example.utsoft.sichendemo.login.presenter;
 
+import com.example.utsoft.sichendemo.interfaces.OnListener;
 import com.example.utsoft.sichendemo.login.model.IUser;
 import com.example.utsoft.sichendemo.login.model.UserBean;
 import com.example.utsoft.sichendemo.login.model.UserModel;
@@ -23,8 +24,17 @@ public class UserInfoPresenterImp implements IUserInfoPresenter {
 
     @Override
     public void save(String name, String city) {
-        iUser.setInfo(name, city);
-        iUserInfoView.saveResult();
+        iUser.setInfo(name, city, new OnListener() {
+            @Override
+            public void onSuccess() {
+                iUserInfoView.saveResult();
+            }
+
+            @Override
+            public void onFailed() {
+
+            }
+        });
     }
 
     @Override
