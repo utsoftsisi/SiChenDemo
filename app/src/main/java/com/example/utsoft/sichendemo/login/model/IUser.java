@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by 陈思 on 2017/3/21 16:08.
  * Function:保存用户输入的信息并进行读取。
- * Desc:Model层主要是对数据的存取，处理（业务逻辑）
+ * Desc:Model层主要是对数据的存取，处理（业务逻辑：主要是数据读写，或者与后台通信（其实也是读写数据））。
  */
 
 public interface IUser {
