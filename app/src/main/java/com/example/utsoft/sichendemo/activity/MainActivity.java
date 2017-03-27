@@ -127,13 +127,7 @@ public class MainActivity extends AppCompatActivity {
                 call.enqueue(new retrofit2.Callback<Data>() {
                     @Override
                     public void onResponse(retrofit2.Call<Data> call, final retrofit2.Response<Data> response) {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                tvRetrofitMainActivity.setText(response.body().getData().getCountry());
-                            }
-
-                        });
+                        tvRetrofitMainActivity.setText(response.body().getData().getCountry());
                     }
 
                     @Override

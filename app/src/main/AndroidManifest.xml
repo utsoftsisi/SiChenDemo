@@ -35,7 +35,7 @@
         <activity android:name=".activity.TestRxBusFirstActivity" />
         <activity android:name=".activity.TestRxBusSecondActivity" />
         <activity android:name=".login.view.UserInfoActivity" />
-        <activity android:name=".netconnect.view.NetConnectActivity"></activity>
+        <activity android:name=".netconnect.view.NetConnectActivity" />
     </application>
 
 </manifest>
