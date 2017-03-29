@@ -21,11 +21,7 @@
         <activity android:name=".activity.TestEvenBusFirstActivity" />
         <activity android:name=".activity.TestEvenBusSecondActivity" />
         <activity android:name=".activity.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".activity.TestGreenDaoActivity" />
         <activity android:name=".activity.TestJieCaoActivity" />
@@ -36,6 +32,13 @@
         <activity android:name=".activity.TestRxBusSecondActivity" />
         <activity android:name=".login.view.UserInfoActivity" />
         <activity android:name=".netconnect.view.NetConnectActivity" />
+        <activity android:name=".activity.MyListViewActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
