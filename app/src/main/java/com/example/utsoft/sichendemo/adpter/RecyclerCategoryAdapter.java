@@ -48,11 +48,17 @@ public class RecyclerCategoryAdapter extends RecyclerView.Adapter<RecyclerView.V
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         switch (getItemViewType(position)) {
             case Category.SECOND_TYPE:
-                SecondViewHolder secondViewHolder = (SecondViewHolder) holder;
+                final SecondViewHolder secondViewHolder = (SecondViewHolder) holder;
                 secondViewHolder.secondCategory.setText(lists.get(position).getCategoryName());
+                secondViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mOnItemClickListener.onItemClick(secondViewHolder.itemView, position);
+                    }
+                });
                 break;
             case Category.THIRD_TYPE:
                 ThirdViewHolder thirdViewHolder = (ThirdViewHolder) holder;
@@ -93,4 +99,23 @@ public class RecyclerCategoryAdapter extends RecyclerView.Adapter<RecyclerView.V
             thirdCategory = (TextView) itemView.findViewById(R.id.tv_category_third);
         }
     }
+
+    /**
+     * Created by 陈思 on 2017/3/29 17:25.
+     * Function:ItemClick的回调接口
+     * Desc:创建接口，提供设置入口，最后在Activity中设置监听
+     */
+    private OnItemClickListener mOnItemClickListener;
+
+    //创建接口
+    public interface OnItemClickListener {
+        void onItemClick(View view, int position);
+    }
+
+    //提供设置入口
+    public void setOnItemClickListener(OnItemClickListener mOnItemClickListener) {
+        this.mOnItemClickListener = mOnItemClickListener;
+    }
+
+
 }

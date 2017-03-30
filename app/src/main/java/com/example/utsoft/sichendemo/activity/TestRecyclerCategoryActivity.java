@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.utsoft.sichendemo.R;
 import com.example.utsoft.sichendemo.adpter.RecyclerCategoryAdapter;
@@ -35,6 +38,14 @@ public class TestRecyclerCategoryActivity extends AppCompatActivity {
 
     private void initView() {
         adapter = new RecyclerCategoryAdapter(this, lists);
+        adapter.setOnItemClickListener(new RecyclerCategoryAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                TextView secondCategory = (TextView) view.findViewById(R.id.tv_category_second);
+                Toast.makeText(TestRecyclerCategoryActivity.this, secondCategory.getText().toString() + position, Toast.LENGTH_LONG).show();
+
+            }
+        });
         GridLayoutManager mLayoutManager = new GridLayoutManager(this, 3);
         mLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
