@@ -3,6 +3,7 @@ package com.example.utsoft.sichendemo.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -60,6 +61,15 @@ public class TestRecyclerGalleryActivity extends AppCompatActivity {
             @Override
             public void onItemClick(View view, int position) {
                 ivContent.setImageResource(mDatas.get(position));
+            }
+        });
+
+        rvGallery.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            //滑动过程中执行该函数
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                ivContent.setImageResource(mDatas.get(recyclerView.getChildAdapterPosition(recyclerView.getChildAt(0))));
             }
         });
     }
