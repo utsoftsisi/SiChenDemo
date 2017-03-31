@@ -47,10 +47,14 @@ public class MyRecyclerView extends RecyclerView {
     public boolean onTouchEvent(MotionEvent e) {
         //监听ACTION_MOVE，用户手指滑动时，不断把当前可见的第一个View回调回去
         if (e.getAction() == MotionEvent.ACTION_MOVE) {
-            mCurrentView = getChildAt(0);
-            Logger.i(getChildAdapterPosition(getChildAt(0)) + "");
+            View newView = getChildAt(0);
             if (mItemScrollChangeListener != null) {
-                mItemScrollChangeListener.onChange(mCurrentView, getChildAdapterPosition(mCurrentView));
+                //滚动时，判断当前第一个View是否发生变化，发生变化才回调
+                if (newView != mCurrentView) {
+                    Logger.i(getChildAdapterPosition(getChildAt(0)) + "");
+                    mCurrentView = newView;
+                    mItemScrollChangeListener.onChange(mCurrentView, getChildAdapterPosition(mCurrentView));
+                }
             }
         }
         return super.onTouchEvent(e);
